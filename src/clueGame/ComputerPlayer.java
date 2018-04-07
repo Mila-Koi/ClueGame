@@ -137,6 +137,7 @@ public class ComputerPlayer extends Player {
 	 * @param suggestion
 	 * @return
 	 */
+	@Override
 	public Card disproveSuggestion(Solution suggestion) {
 		Card cardToDisprove = null; // set disproving card to null initially
 		HashSet<Card> matchingCards = new HashSet<Card>();
@@ -158,6 +159,7 @@ public class ComputerPlayer extends Player {
 		for(Card next : matchingCards) { // Iterates through weapon card set until i equals the randomly chosen number
 			if (i == randMatchingCard) {
 				cardToDisprove = next; // set disproving card
+				break;
 			}
 			i++;
 		}
