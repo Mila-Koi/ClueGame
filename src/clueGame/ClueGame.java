@@ -66,10 +66,13 @@ public class ClueGame extends JFrame {
 		
 		detectiveNotes = new DetectiveNotes();
 		
+<<<<<<< HEAD
 		// Create the JPanel for the control GUI and add it to the JFrame
 		ControlGUI gui = new ControlGUI();
 		gui.setSize(800, 600);
 		add(gui, BorderLayout.SOUTH);
+=======
+>>>>>>> 2d9a7e8 (Added SplashScreen class to display the Splash Screen to the user at the beginning of the game.)
 	}
 	
 	/**
@@ -117,6 +120,6 @@ public class ClueGame extends JFrame {
 	public static void main(String[] args) {
 		ClueGame game = new ClueGame(); // Make ClueGame GUI
 		game.setVisible(true); // Display the GUI
-
+		SplashScreen splash = new SplashScreen(game); // Display the splash box at the start of the game for the user
 	}
 }
