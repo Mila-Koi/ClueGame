@@ -24,7 +24,8 @@ public class ClueGame extends JFrame {
 	private static Board board; // Board GUI JPanel
 	private DetectiveNotes detectiveNotes;
 	private MyCardsGUI myCardsGUI;
-
+	private ControlGUI gui;
+	
 	public ClueGame() {
 		// Board is singleton, get the only instance there is
 		board = Board.getInstance();
@@ -59,7 +60,7 @@ public class ClueGame extends JFrame {
 		
 <<<<<<< HEAD
 		// Create the JPanel for the control GUI and add it to the JFrame
-		ControlGUI gui = new ControlGUI();
+		gui = new ControlGUI();
 		gui.setSize(800, 600);
 		add(gui, BorderLayout.SOUTH);
 =======
