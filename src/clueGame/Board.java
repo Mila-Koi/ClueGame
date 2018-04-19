@@ -58,7 +58,7 @@ public class Board extends JPanel implements MouseListener{
 	private String playerConfigFile; // Player Configuration File Name
 	private String weaponConfigFile; // Weapon Configuration File Name
 	
-	public static Player[] playerList; // Array of players in the game
+	private Player[] playerList; // Array of players in the game
 	private Set<Card> cards; // Set of every card in the game
 	private Solution answer; // The three cards randomly chosen as the game's solution
 	
@@ -644,18 +644,26 @@ public class Board extends JPanel implements MouseListener{
 		Card disprovingCard = null;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		for (int i = (indexOfSuggestingPlayer + 1) % playerList.length; i != indexOfSuggestingPlayer; i = (i+1) % playerList.length) { // start at player after the suggesting player, iterate through other players until back at suggesting player
 =======
 		for (int i = (indexOfSuggestingPlayer+1) % playerList.length; i != indexOfSuggestingPlayer; i = (i+1) % playerList.length) { // start at player after the suggesting player, iterate through other players until back at suggesting player
 >>>>>>> 285bcd8 (Implemented code to display the disproving card into the control gui display)
 =======
 		int temp = (indexOfSuggestingPlayer+(NUM_PLAYERS-1)) % NUM_PLAYERS;
+=======
+		//int temp = (indexOfSuggestingPlayer+(NUM_PLAYERS-1)) % NUM_PLAYERS;
+>>>>>>> 44bc580 (Made a few more changes to player indexing for handleSuggestion() function)
 		/*
 		String name = playerList[temp].getPlayerName();
 		System.out.println(name);
 		*/
+<<<<<<< HEAD
 		for (int i = (temp + 1) % playerList.length; i != temp; i = (i+1) % playerList.length) { // start at player after the suggesting player, iterate through other players until back at suggesting player
 >>>>>>> 6ea2b36 (Implemented ability for player to choose which card to disprove with if they can disprove with more than one card)
+=======
+		for (int i = (indexOfSuggestingPlayer + 1) % playerList.length; i != indexOfSuggestingPlayer; i = (i+1) % playerList.length) { // start at player after the suggesting player, iterate through other players until back at suggesting player
+>>>>>>> 44bc580 (Made a few more changes to player indexing for handleSuggestion() function)
 			if (playerList[i] instanceof ComputerPlayer) { // if the next player is a cpu
 				ComputerPlayer nextCPU = (ComputerPlayer) playerList[i];
 				Card cardCheck = nextCPU.disproveSuggestion(suggestion); // check if this cpu can disprove the suggestion
