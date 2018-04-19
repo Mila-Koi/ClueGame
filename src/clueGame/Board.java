@@ -645,6 +645,7 @@ public class Board extends JPanel implements MouseListener{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		for (int i = (indexOfSuggestingPlayer + 1) % playerList.length; i != indexOfSuggestingPlayer; i = (i+1) % playerList.length) { // start at player after the suggesting player, iterate through other players until back at suggesting player
 =======
 		for (int i = (indexOfSuggestingPlayer+1) % playerList.length; i != indexOfSuggestingPlayer; i = (i+1) % playerList.length) { // start at player after the suggesting player, iterate through other players until back at suggesting player
@@ -664,6 +665,9 @@ public class Board extends JPanel implements MouseListener{
 =======
 		for (int i = (indexOfSuggestingPlayer + 1) % playerList.length; i != indexOfSuggestingPlayer; i = (i+1) % playerList.length) { // start at player after the suggesting player, iterate through other players until back at suggesting player
 >>>>>>> 44bc580 (Made a few more changes to player indexing for handleSuggestion() function)
+=======
+		for (int i = (indexOfSuggestingPlayer + 1) % playerList.length; i != indexOfSuggestingPlayer; i = (i + 1) % playerList.length) { // start at player after the suggesting player, iterate through other players until back at suggesting player
+>>>>>>> 0ed0d75 (Refactored some things to make code easier to understand)
 			if (playerList[i] instanceof ComputerPlayer) { // if the next player is a cpu
 				ComputerPlayer nextCPU = (ComputerPlayer) playerList[i];
 				Card cardCheck = nextCPU.disproveSuggestion(suggestion); // check if this cpu can disprove the suggestion
@@ -758,6 +762,7 @@ public class Board extends JPanel implements MouseListener{
 						suggestionDialog.setRoomLabel(legend.get(board[playerList[0].getRow()][playerList[0].getColumn()].getInitial())); // Sets the suggestion dialog to use the name of the room the player is currently in
 						suggestionDialog.setVisible(true);
 					}
+					currentPlayer = (currentPlayer + 1) % playerList.length;
 					break;
 				}
 			}
@@ -790,13 +795,13 @@ public class Board extends JPanel implements MouseListener{
 		int randomRoll = (int)Math.floor((Math.random() * 6) + 1); // Picks a random roll 1 - 6
 		rollNumber.setText(String.valueOf(randomRoll)); // Updates rollNumber JTextField
 		nextPlayer = playerList[currentPlayer]; // Gets the current player, and sets currentPlayer to the next player
-		currentPlayer = (currentPlayer + 1) % playerList.length;
 		if(nextPlayer instanceof ComputerPlayer){ // If player is computer,
 			isHumanPlayersTurn = false; // It is not the human's turn
 			calcTargets(nextPlayer.getRow(), nextPlayer.getColumn(), randomRoll); // Calculates the targets and selects a location to move to
 			BoardCell targetCell = ((ComputerPlayer) nextPlayer).selectTarget(getTargets());
 			((ComputerPlayer) nextPlayer).updateLocation(targetCell);
 			repaint(); // Redraws board to display computer player's new location
+			currentPlayer = (currentPlayer + 1) % playerList.length;
 		}
 		else {
 			isHumanPlayersTurn = true; // It is the human player's turn
