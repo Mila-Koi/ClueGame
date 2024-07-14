@@ -1,6 +1,6 @@
 /**
  * @author Johnathan Castillo
- * @author David Ayres
+ * @author Mila Evans
  * C13A-1 Clue Paths
  */
 package clueGame;

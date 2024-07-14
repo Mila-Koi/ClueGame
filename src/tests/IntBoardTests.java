@@ -1,6 +1,6 @@
 /**
  * @author Johnathan Castillo
- * @author David Ayres
+ * @author Mila Evans
  * C12A-1 Clue Paths
  */
 package tests;

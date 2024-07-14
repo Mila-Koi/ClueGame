@@ -1,6 +1,6 @@
 /**
  * @author Johnathan Castillo
- * @author David Ayres
+ * @author Mila Evans
  * C14A-1 Clue Board III
  */
 package tests;
